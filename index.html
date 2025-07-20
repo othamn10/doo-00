@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎬 مكتبة الأفلام</title>
+  <style>
+    :root {
+      --main-bg: #f9f9fb;
+      --card-bg: #ffffff;
+      --accent: #5f85db;
+      --text-color: #222;
+      --subtle-text: #777;
+    }
+
+    [data-theme="dark"] {
+      --main-bg: #121212;
+      --card-bg: #1e1e1e;
+      --accent: #90caf9;
+      --text-color: #f5f5f5;
+      --subtle-text: #bbb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--main-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 0 1rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      transition: 0.3s;
+      background: #e8ebf8;
+    }
+
+    nav a:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .theme-toggle {
+      margin: 1rem auto;
+      text-align: center;
+    }
+
+    .theme-toggle button {
+      padding: 0.5rem 1.2rem;
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .category {
+      margin-bottom: 2.5rem;
+    }
+
+    .category h2 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: 1.8rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--subtle-text);
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--subtle-text);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 مكتبة الأفلام والراديو</h1>
+    <nav>
+      <a href="#movies">أفلام</a>
+      <a href="#radio">راديو عالمي</a>
+      <a href="#doc">وثائقيات</a>
+    </nav>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">🌓 تبديل الوضع الليلي/النهاري</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="movies" class="category">
+      <h2>🎥 أفلام مجانية</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Cineby</h3>
+          <p>أحدث الأفلام العربية والعالمية بدون اشتراك</p>
+          <a href="https://www.cineby.app/" target="_blank">ادخل</a>
+        </div>
+        <div class="card">
+          <h3>Nunflix</h3>
+          <p>منصة أفلام بجودة عالية بدون تسجيل</p>
+          <a href="https://nunflix.org/" target="_blank">ادخل</a>
+        </div>
+        <div class="card">
+          <h3>Heartive</h3>
+          <p>مشاهدة أفلام ومسلسلات مجانا</p>
+          <a href="https://heartive.pages.dev/" target="_blank">ادخل</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="radio" class="category">
+      <h2>📻 راديو عالمي مباشر</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Radio Garden</h3>
+          <p>استمع لمحطات إذاعية من مختلف دول العالم</p>
+          <a href="https://radio.garden/" target="_blank">ادخل</a>
+        </div>
+        <div class="card">
+          <h3>Live Online Radio</h3>
+          <p>محطات إذاعية مباشرة بجميع اللغات والأنواع</p>
+          <a href="https://liveonlineradio.net/" target="_blank">ادخل</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="doc" class="category">
+      <h2>📚 وثائقيات</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>TopDocumentaryFilms</h3>
+          <p>أفضل الأفلام الوثائقية المصنفة حسب التخصص</p>
+          <a href="https://topdocumentaryfilms.com" target="_blank">ادخل</a>
+        </div>
+        <div class="card">
+          <h3>DW Documentary</h3>
+          <p>وثائقيات من قناة دويتشه فيله الألمانية</p>
+          <a href="https://www.youtube.com/@DWDocumentary" target="_blank">ادخل</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>🌐 تصميم متجاوب وخفيف لكل الأجهزة - بدون إعلانات مزعجة</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme === "dark" ? "light" : "dark"
+      );
+    }
+  </script>
+</body>
+</html>
